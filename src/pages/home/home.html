@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>MeuClima</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{ location.city }}, {{ location.state }}</h2>
+        <div class="icon"><img [src]="img"></div>
+        <h3 class="desc">{{ weather.condition }}</h3>
+        <h1 class="temp">
+          <strong>{{ weather.temperature }}</strong> &deg;C
+        </h1> 
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>Sensação:</strong> {{ weather.sensation }} &deg;C
+          </ion-item>
+          <ion-item>
+            <strong>Umidade:</strong> {{ weather.humidity }} %
+          </ion-item>
+          <ion-item>
+            <strong>Direção do vento:</strong> {{ weather.wind_direction }}
+          </ion-item>
+          <ion-item>
+            <strong>Velocidade do vento:</strong> {{ weather.wind_velocity }} km/h
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
